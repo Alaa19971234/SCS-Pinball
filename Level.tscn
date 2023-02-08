@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SphereShape" id=1]
+radius = 1.01003
+
+[sub_resource type="SphereMesh" id=2]
+
+[node name="Level" type="Spatial"]
+
+[node name="RigidBody" type="RigidBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
+mesh = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.10104, -0.453088, 0.885721, 0.0513539, 0.891466, 0.450169, -0.993556, -3.74945e-09, 0.113342, 4.02393, 1.78215, 0 )
