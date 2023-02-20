@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://pinball_flipper/Root.material" type="Material" id=1]
-[ext_resource path="res://Flipper 2.gd" type="Script" id=2]
+[ext_resource path="res://Flipper 2.gd" type="Script" id=1]
+[ext_resource path="res://pinball_flipper/Root.material" type="Material" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Sketchfab_Scene_Cube000_0"
@@ -12,7 +12,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194691,
 "index_count": 3252,
-"material": ExtResource( 1 ),
+"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 544
@@ -23,7 +23,7 @@ points = PoolVector3Array( -1.87855, 0.929828, -0.0174148, -1.87855, 0.929828, -
 
 [node name="Flipper2" type="KinematicBody"]
 transform = Transform( -0.997535, 0, -0.0701743, 0, 1, 0, 0.0701743, 0, -0.997535, 0, 0, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="Cube000_0" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 2.01299, 0, 0 )

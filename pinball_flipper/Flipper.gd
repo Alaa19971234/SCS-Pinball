@@ -1,14 +1,20 @@
 extends KinematicBody
 
-var current_angle = Vector3();
-var target_rotation = Vector3();
-export var speed = 3.0;
+export var flipper_speed = 5  # adjust the speed of the flipper rotation
 
-func _process(delta):
-	rotation_degrees = Vector3(0,lerp(rotation_degrees.y,target_rotation.y,speed*delta),0)
+var flipper_rot = 0  # keep track of the current flipper rotation
 
-func _on_RightButton_pressed():
-	target_rotation = target_rotation -  Vector3(0,90,0)
+func _ready():
+	pass  # add any initialization code here
 
-func _on_LeftButton_pressed():
-	target_rotation = target_rotation +  Vector3(0,90,0)
+func _input(event):
+	if event.is_action_pressed("flipper"):
+		flipper_rot = 10  # set the flipper rotation to a negative value to make it rotate upwards
+	elif event.is_action_released("flipper"):
+		flipper_rot = 0  # set the flipper rotation back to 0 to stop the rotation
+
+func _physics_process(delta):
+	# apply the flipper rotation to the flipper using the rotate_y function
+	var rot = self.rotation
+	rot.y = lerp(rot.y, flipper_rot, delta * flipper_speed)
+	self.rotation = rot
