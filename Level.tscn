@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://pinball_flipper/Flipper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://pinball_flipper/Flipper1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Flipper 2.gd" type="Script" id=2]
 
 [sub_resource type="SphereShape" id=1]
 radius = 1.01003
@@ -21,7 +22,7 @@ points = PoolVector3Array( -1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49432, -5.87821 )
 
 [node name="ball" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02454, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9707, 6.02454, -6.44244 )
 gravity_scale = 2.0
 
 [node name="CollisionShape" type="CollisionShape" parent="ball"]
@@ -29,21 +30,25 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="ball"]
 mesh = SubResource( 2 )
+material/0 = null
 
 [node name="Cylinder" type="StaticBody" parent="."]
-transform = Transform( 1.00256, 0, 0, 0, 1.00256, 0, 0, 0, 1.00256, -9.9377, -2.60906, 1.62407 )
+transform = Transform( 1.00256, 0, 0, 0, 1.00256, 0, 0, 0, 1.00256, -9.05985, -2.08908, 7.50994 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Cylinder"]
 mesh = SubResource( 9 )
+material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Cylinder"]
 shape = SubResource( 10 )
 
 [node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 0.76802, 0.279172, -0.576375, -0.341626, 0.939836, 0, 0.541698, 0.196905, 0.817185, -14.7817, 1.19209e-07, -3.92276 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 transform = Transform( 9.59906, -0.575338, 0, 1.59089, 0.953459, 0, 0, 0, 2.85569, -1.1952, -1.62206, 0 )
 mesh = SubResource( 12 )
+material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 transform = Transform( 9.59906, -0.575338, 0, 1.59089, 0.953459, 0, 0, 0, 2.85569, -1.1952, -1.62206, 0 )
@@ -52,5 +57,10 @@ shape = SubResource( 13 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.414919, -0.429063, 0.802339, 0.0513539, 0.891466, 0.450168, -0.908408, -0.14558, 0.39192, 8.24504, 4.58772, 2.78173 )
 
-[node name="Flipper" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45761, 1.09397, -0.401567 )
+[node name="Flipper1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.969304, -0.245866, 0, 0.245866, 0.969304, -12.4972, -2.54418, 2.38989 )
+
+[node name="Flipper2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 0, 0, 0.983131, -0.182905, 0, 0.182905, 0.983131, -6.31391, -2.54418, -3.43793 )
+script = ExtResource( 2 )
+flipper_speed = 10
