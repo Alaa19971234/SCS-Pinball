@@ -1,0 +1,34 @@
+2a60927148abd1d33b818b535e306557
+::res://::1678675074
+default_env.tres::Environment::5575960045946294580::1678675043::0::1::::<><>::
+GlobalScore.tscn::PackedScene::-1::1678669193::0::1::::<><>::res://Scripts/GlobalScore.gd
+icon.png::CompressedTexture2D::840153554514023106::1677634554::1678669201::1::::<><>::
+Level 1.tscn::PackedScene::172332924901035644::1678675043::0::1::::<><>::uid://d143du2o8boe2<>uid://ccjo68axpp0la<>uid://bqfm20gibqayd<>uid://ccbkr2iqno4f2<>uid://e205qa7sk7xh<>res://Meshes/ball.tscn<>res://Scripts/FlipperStaticBody.gd<>res://ScoreLabel.gd
+ScoreLabel.gd::GDScript::-1::1678669193::0::1::::<>Control<>::
+::res://Meshes/::1678675043
+ball.tscn::PackedScene::-1::1678669193::0::1::::<><>::res://Scripts/ball.gd<>res://Meshes/ball_physicsmaterial.tres
+ball_physicsmaterial.tres::PhysicsMaterial::5468241575107566720::1678675042::0::1::::<><>::
+Pinball map.glb::PackedScene::6903033310797643910::1678639159::1678669201::1::::<><>::
+Pinball map.tscn::PackedScene::4915922392074186873::1678675043::0::1::::<><>::
+Plunger.tscn::PackedScene::3520542213738577347::1678675043::0::1::::<><>::res://Scripts/Plunger.gd
+::res://Meshes/bumpers/::1678675043
+bumper.tscn::PackedScene::338065914400072709::1678675043::0::1::::<><>::res://Scripts/Bumper.gd<>res://Meshes/bumpers/Lower_Sides_Map.material<>res://Meshes/bumpers/Top_Sides_Map.material<>res://Meshes/bumpers/Top_Map.material
+license.txt::TextFile::-1::1677634554::0::1::::<><>::
+Lower_Sides_Map.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
+Top_Map.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
+Top_Sides_Map.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
+::res://Meshes/Flipper/::1678675043
+FlipperOne.tscn::PackedScene::9045745466572027123::1678675043::0::1::::<><>::res://Scripts/Flipper1.gd<>res://Meshes/Flipper/Root.material
+FlipperTwo.tscn::PackedScene::4932705586294820514::1678670467::0::1::::<><>::res://Scripts/Flipper 2.gd<>res://Meshes/Flipper/Root.material
+Flipper_physicsmaterial.tres::PhysicsMaterial::-1::1678669194::0::1::::<><>::
+license.txt::TextFile::-1::1677634554::0::1::::<><>::
+Root.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
+::res://Scripts/::1678675042
+ball.gd::GDScript::-1::1678674408::0::1::::<>RigidBody3D<>::
+Bumper.gd::GDScript::-1::1678675042::0::1::::<>CharacterBody3D<>::
+Flipper1.gd::GDScript::-1::1678673049::0::1::::<>CharacterBody3D<>::
+Flipper 2.gd::GDScript::-1::1678673049::0::1::::<>CharacterBody3D<>::
+FlipperStaticBody2.gd::GDScript::-1::1678669193::0::1::::<>StaticBody3D<>::
+FlipperStaticBody.gd::GDScript::-1::1678669193::0::1::::<>StaticBody3D<>::
+GlobalScore.gd::GDScript::-1::1678669193::0::1::::<>Node<>::
+Plunger.gd::GDScript::-1::1678674632::0::1::::<>CharacterBody3D<>::
