@@ -1,28 +1,36 @@
-extends RigidBody
+extends RigidBody3D
 
-var collision_detected = false
+var plunger
+var return_box
+var starting_base
+var board
 
 func _ready():
-	# Connect the body_entered signal to the ball
-	connect("body_entered", self, "_on_ball_body_entered")
-
-func _process(delta):
-	# After a collision with an object
-	if collision_detected:
-		# Check the ball's Y velocity
-		var y_velocity = get_linear_velocity().y
-		# Set a minimum Y velocity
-		var min_y_velocity = -500 # Change this to suit your game
-		# Clamp the Y velocity to the minimum value
-		var new_velocity = Vector3(get_linear_velocity().x, max(y_velocity, min_y_velocity), get_linear_velocity().z)
-		# Apply impulse to set the new velocity
-		apply_impulse(Vector3.ZERO, new_velocity - get_linear_velocity())
-		# Reset the collision_detected flag
-		collision_detected = false
+	# Find the Plunger and StartingBase nodes
+		# Find the Board node
+	board = get_node_or_null("/root/Level/Pinball map")
+	
+	plunger = get_node_or_null("/root/Level/Plunger")
+	starting_base = get_node_or_null("/root/Level/StartingBase")
+	
+	# Find the ReturnBox node
+	return_box = get_node_or_null("/root/Level/ReturnBox")
 
 func _on_ball_body_entered(body):
-	if body.is_in_group("bumper"):
+	
+	print("Collided with:", body.get_name())
+	print("Parent node:", body.get_parent().get_name()) # Add this line to print the name of the parent node
+	
+	# Check if the ball has collided with the return box
+	if body == return_box:
+		starting_base = get_node_or_null("/root/Level/StartingBase")
+		if starting_base:
+			# Set the ball's position to the position of the starting base next to the plunger
+			set_position(Vector3(starting_base.get_position().x - 3 , starting_base.get_position().y - 3, starting_base.get_position().z - 8.0))
+
+			# Reset the ball's velocity and angular velocity
+			set_linear_velocity(Vector3.ZERO)
+			set_angular_velocity(Vector3.ZERO)
+	elif body.is_in_group("bumper"):
 		print("ball!")
 		body.call("on_bumper_hit", self)
-	# Set the collision_detected flag
-	collision_detected = true

@@ -1,11 +1,16 @@
-extends KinematicBody
+extends CharacterBody3D
 
-export var plunger_speed = 50
-export var max_plunger_distance = 0
-export var min_plunger_scale = 2
+@export var plunger_speed = 50
+@export var max_plunger_distance = 0
+@export var min_plunger_scale = 6
+@export var plunger_force = 80
 
 var plunger_distance = 0
 var plunger_scale = Vector3(1, 4, 1)
+
+func _ready():
+	pass
+
 
 func _input(event):
 	if event.is_action_pressed("pull_plunger"):
@@ -18,7 +23,18 @@ func _input(event):
 func _physics_process(delta):
 	var movement = Vector3(0, 0, +plunger_distance)
 	movement *= delta * plunger_speed
-	self.translation += movement
+	self.position += movement
 	self.scale = plunger_scale
 	if plunger_scale.y < 1:
 		plunger_scale.y += delta / 2
+
+
+func on_bumper_hit(body):
+	# Add any behavior or events you want to trigger here
+	if body.is_in_group("ball"):
+		print("plunger!");
+		var ball_velocity = body.linear_velocity
+		var plunger_direction = (body.global_transform.origin - global_transform.origin).normalized()
+		var plunger_impulse = plunger_direction * plunger_force
+		body.apply_impulse(plunger_impulse, Vector3.ZERO)
+		pass
