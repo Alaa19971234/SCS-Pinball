@@ -1,70 +1,132 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=3 uid="uid://cpqkeulbd0ei"]
 
-[ext_resource path="res://Meshes/Flipper/FlipperOne.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Flipper 2.gd" type="Script" id=2]
-[ext_resource path="res://Meshes/Pinball map.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Meshes/bumpers/bumper.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/ball.gd" type="Script" id=6]
+[ext_resource type="PackedScene" uid="uid://d143du2o8boe2" path="res://Meshes/Flipper/FlipperOne.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://ccjo68axpp0la" path="res://Meshes/Flipper/FlipperTwo.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bqfm20gibqayd" path="res://Meshes/Plunger.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://ccbkr2iqno4f2" path="res://Meshes/Pinball map.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://e205qa7sk7xh" path="res://Meshes/bumpers/bumper.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://Meshes/ball.tscn" id="6"]
+[ext_resource type="Script" path="res://Scripts/FlipperStaticBody.gd" id="7"]
+[ext_resource type="Script" path="res://ScoreLabel.gd" id="8"]
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="BoxMesh" id="19"]
 
-[sub_resource type="SphereShape" id=3]
+[sub_resource type="ConvexPolygonShape3D" id="20"]
+points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
 
-[node name="Level" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 0.997614, -0.0690426, 0, 0.0690426, 0.997614, 0, -1.49432, -5.87821 )
+[sub_resource type="BoxShape3D" id="21"]
+size = Vector3(46.0649, 0.360261, 73.3804)
 
-[node name="ball" type="RigidBody" parent="." groups=["ball"]]
-transform = Transform( 0.301582, 0, 0, 0, 0.287747, 0, 0, 3.72529e-08, 0.306272, 3.124, 4.03825, 10.4386 )
-collision_mask = 2
-gravity_scale = 10.0
-continuous_cd = true
-contacts_reported = 2
-contact_monitor = true
-can_sleep = false
-script = ExtResource( 6 )
+[sub_resource type="BoxMesh" id="15"]
 
-[node name="MeshInstance" type="MeshInstance" parent="ball"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020525, 4.76837e-07, -0.0136633 )
-mesh = SubResource( 2 )
-material/0 = null
+[sub_resource type="ConcavePolygonShape3D" id="16"]
+data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
 
-[node name="CollisionShape" type="CollisionShape" parent="ball"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 1.49012e-08, 1, 0, 0, 0 )
-shape = SubResource( 3 )
+[sub_resource type="BoxMesh" id="17"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.715144, 0.698977, 0, -0.698977, 0.715144, 0.4968, 16.6188, 23.1852 )
+[sub_resource type="ConcavePolygonShape3D" id="18"]
+data = PackedVector3Array(-1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
 
-[node name="Pinball map" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.966, 6.759 )
+[node name="Level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49432, -5.87821)
 
-[node name="FlipperOne" parent="Pinball map" instance=ExtResource( 1 )]
-transform = Transform( -0.233863, -0.00896039, 0.116518, 0.00282674, 0.275362, 0.0150048, -0.159131, 0.0180598, -0.170971, -2.27846, 0.347754, 9.91227 )
+[node name="StartingBase" type="StaticBody3D" parent="."]
+transform = Transform3D(1.92788, 0, 0, 0, 1, 0, 0, 1.49012e-08, 1, 8.27371, 3.9555, 10.1844)
 
-[node name="FlipperTwo" parent="Pinball map" instance=ExtResource( 1 )]
-transform = Transform( -0.256655, -0.00638467, 0.0870838, -0.000702201, 0.275661, 0.010261, 0.119234, -0.0121196, 0.18751, 1.36783, 0.315559, 10.2446 )
-script = ExtResource( 2 )
-flipper_speed = 10
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StartingBase"]
+transform = Transform3D(0.698818, 0, 0, 0, 0.737679, 0, 0, 0, 0.0349113, -0.769474, -3.98096, -1.86331)
+mesh = SubResource("19")
 
-[node name="bumper" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.01046, 0, 0, 0, 1.17034, 0.0249711, 0, -0.0329571, 0.886754, 0.27375, 2.18641, 10.3166 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StartingBase"]
+transform = Transform3D(0.38625, 0, 0, 0, 0.379955, 0, 0, 0, 0.0349113, -0.769474, -3.98096, -1.86331)
+shape = SubResource("20")
 
-[node name="bumper2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.02057, 0, 0, 0, 1.37047, 0.0221494, 0, -0.0385927, 0.786551, -1.95094, 2.18233, 7.21839 )
+[node name="ScoreLabel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8")
 
-[node name="bumper3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.02057, 0, 0, 0, 1.37047, 0.0221494, 0, -0.0385927, 0.786551, 2.7212, 2.18087, 6.10672 )
+[node name="Label" type="Label" parent="ScoreLabel"]
+self_modulate = Color(0.0588235, 0.686275, 0.156863, 1)
+layout_mode = 0
+anchor_right = 1.0
+offset_right = 79.0
+offset_bottom = 64.0
+scale = Vector2(3.208, 3.25)
+text = "Score: 0"
 
-[node name="bumper4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.02057, 0, 0, 0, 1.37047, 0.0221494, 0, -0.0385927, 0.786551, -2.01006, 2.19026, 13.2469 )
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.798531, 0.601954, 0, -0.601954, 0.798531, 0, 13.3339, 17.3424)
 
-[node name="bumper5" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.02057, 0, 0, 0, 1.37047, 0.0221494, 0, -0.0385927, 0.786551, 2.57858, 2.1902, 13.1968 )
+[node name="ReturnBox" type="StaticBody3D" parent="."]
+transform = Transform3D(1.681, 0, 0, 0, 1, 0, 0, 0, 1, 11.911, 0, 0)
 
-[node name="bumper6" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.02057, 0, 0, 0, 1.37047, 0.0221494, 0, -0.0385927, 0.786551, 5.22283, 2.18997, 13.0262 )
+[node name="ReturnBox" type="CollisionShape3D" parent="ReturnBox"]
+transform = Transform3D(1.178, 0, 0, 0, 1.37244, -0.128986, 0, 0.178517, 0.991646, 0, -8.14615, 4.76837e-07)
+shape = SubResource("21")
 
-[node name="bumper7" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1.02057, 0, 0, 0, 1.37047, 0.0221494, 0, -0.0385927, 0.786551, -4.69126, 2.22278, 13.419 )
+[node name="Pinball map" parent="." instance=ExtResource("4")]
+transform = Transform3D(1.281, 0, 0, 0, 1.37243, -0.128986, 0, 0.178516, 0.991646, 0, 0, 0)
 
-[connection signal="body_entered" from="ball" to="ball" method="_on_ball_body_entered"]
+[node name="plunger" parent="Pinball map" instance=ExtResource("3")]
+transform = Transform3D(0.78064, 0, 0, 0, -0.00369861, 0.992882, 0, -0.728019, 0.0789247, 5.19905, 0.799104, 14.1469)
+
+[node name="ball" parent="Pinball map" instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 0, 1, 2.908, 0.906811, 0.606442)
+
+[node name="Flipper1" parent="Pinball map" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 2.0389, -1.49012e-08, 0, 2.68221e-07, 0.486083, -3.155, 0.562036, 9.87514)
+
+[node name="Flipper2" parent="Pinball map" instance=ExtResource("2")]
+transform = Transform3D(-1.01062, 0, -0.0243094, 1.39698e-09, 2.37469, 0, 0.0710948, 1.78814e-07, -0.34556, 2.9518, 0.54943, 9.91235)
+
+[node name="bumper" parent="Pinball map" instance=ExtResource("5")]
+transform = Transform3D(0.995209, 0, 0, 0, 2.01741, -7.45058e-09, 0, 0, 1.12001, -1.51802, 0, 0)
+
+[node name="bumper3" parent="Pinball map" instance=ExtResource("5")]
+transform = Transform3D(0.995209, 0, 0, 0, 2.01741, 0, 0, 0, 1.12001, -6.40716, 0, 0)
+
+[node name="bumper6" parent="Pinball map" instance=ExtResource("5")]
+transform = Transform3D(0.57234, 0, 0, 0, 2.01741, -1.49012e-08, 0, 0, 1.12001, 4.14405, 0, 5.47498)
+
+[node name="bumper5" parent="Pinball map" instance=ExtResource("5")]
+transform = Transform3D(0.995209, 0, 0, 0, 2.01741, -7.45058e-09, 0, 0, 1.12001, 2.96899, -0.000991225, 4.05459)
+
+[node name="bumper4" parent="Pinball map" instance=ExtResource("5")]
+transform = Transform3D(0.99521, 0, 0, 0, 2.01741, 0, 0, 0, 1.12001, -6.56963, -2.38419e-07, 5.96245)
+
+[node name="flipper shield2" type="StaticBody3D" parent="Pinball map"]
+transform = Transform3D(0.765355, 0, -0.00128172, 0, 0.723, 0, 0.638938, -7.45058e-09, 0.00153531, -1.48328, 0.787312, 10.5715)
+visible = false
+script = ExtResource("7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pinball map/flipper shield2"]
+mesh = SubResource("15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pinball map/flipper shield2"]
+shape = SubResource("16")
+
+[node name="flipper shield" type="StaticBody3D" parent="Pinball map"]
+transform = Transform3D(0.765355, 0, 0.0064086, 3.72529e-09, 0.723, 0, -0.638938, -1.49012e-08, 0.00767657, 0.984582, 0.787, 10.572)
+visible = false
+script = ExtResource("7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pinball map/flipper shield"]
+mesh = SubResource("15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pinball map/flipper shield"]
+shape = SubResource("16")
+
+[node name="ceiling" type="StaticBody3D" parent="Pinball map"]
+transform = Transform3D(0.78064, 0, 0, 0, 0.722521, 0.00591439, 0, -0.00818551, 0.999967, 0, -0.0805221, 0.0144958)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pinball map/ceiling"]
+transform = Transform3D(8, 0, 0, 0, 0.072, 7.15256e-07, 0, -9.31323e-10, 12, -0.682745, 1.88781, 0.257174)
+visible = false
+mesh = SubResource("17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pinball map/ceiling"]
+transform = Transform3D(8, 0, 0, 0, 0.072, 5.96046e-07, 0, 0, 12, -0.682745, 1.88781, 0.257174)
+shape = SubResource("18")
