@@ -24,10 +24,10 @@ transform = Transform3D(-1.0356, 0, -0.0325581, 0, 2.463, 0, 0.0728521, 0, -0.46
 script = ExtResource("1")
 
 [node name="Cube000_0" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.347, 3.72529e-09, 2.22045e-16, 0, -1.25452e-08, 0.319, 3.72529e-09, -0.287, -1.39439e-08, 2.01299, 0, 2.98023e-08)
+transform = Transform3D(0.35, 3.7575e-09, 1.64245e-16, 0, -1.5299e-08, 0.35, 3.7575e-09, -0.35, -1.5299e-08, 0.7, 2.08165e-12, 2.08165e-12)
 mesh = SubResource("1")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.554001, -1.30385e-08, 1.11022e-16, 0, -1.25452e-08, 0.319, 2.6077e-08, -0.287, -1.39439e-08, 1.59238, -9.68001e-08, 0.00503962)
+transform = Transform3D(0.35, 1.68828e-08, 7.37972e-16, 0, -1.5299e-08, 0.35, 1.68828e-08, -0.35, -1.5299e-08, 0.7, 2.08165e-12, 2.08165e-12)
 shape = SubResource("2")
