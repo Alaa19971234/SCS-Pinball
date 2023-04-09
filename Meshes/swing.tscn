@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy3fu7p8t0ppm"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_41xel"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x4ieq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56vlu"]
+
+[node name="swing" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.438994, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody3D")
+angular_limit/enable = true
+angular_limit/upper = 0.174533
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.28423, 0, 0, 0, 0.648665, 0, 0, 0, 0.233559, 0, 0.504297, 0)
+mesh = SubResource("CylinderMesh_41xel")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1.06041, 0, 0, 0, 1.00121, 0, 0, 0, 1.00121, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 1.014, 0, 0, 0, 0.179, -0.951972, 0.5, 0)
+mesh = SubResource("BoxMesh_x4ieq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.177, -0.952, 0.5, 0)
+shape = SubResource("BoxShape3D_56vlu")
