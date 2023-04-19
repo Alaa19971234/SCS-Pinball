@@ -9,7 +9,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("flipper"):
-		flipper_rot = 2  # set the flipper rotation to a negative value to make it rotate upwards
+		flipper_rot = 2.2  # set the flipper rotation to a negative value to make it rotate upwards
 	elif event.is_action_released("flipper"):
 		flipper_rot = 3.5  # set the flipper rotation back to 0 to stop the rotation
 
