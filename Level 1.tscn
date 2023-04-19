@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bqfm20gibqayd" path="res://Meshes/Plunger.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://ccbkr2iqno4f2" path="res://Meshes/Pinball map.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://e205qa7sk7xh" path="res://Meshes/bumpers/bumper.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://Meshes/ball.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://chgoppuid1b6" path="res://Meshes/ball.tscn" id="6"]
 [ext_resource type="Script" path="res://Scripts/FlipperStaticBody.gd" id="7"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="8"]
 

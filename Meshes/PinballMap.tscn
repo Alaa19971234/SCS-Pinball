@@ -132,7 +132,7 @@ transform = Transform3D(1, 0, 0, 0, -4.47035e-08, -1, 0, 1, -4.47035e-08, 5.4565
 transform = Transform3D(1, 0, 0, 0, 2.46282, 0, 0, 0, 0.562017, -2.15626, 0.450256, 10.1599)
 
 [node name="Flipper2" parent="." instance=ExtResource("6_rwkao")]
-transform = Transform3D(-1.0356, 0, -0.0325581, 9.31323e-10, 2.463, 0, 0.0728521, -8.9407e-08, -0.462816, 1.70676, 0.574782, 10.2301)
+transform = Transform3D(-1, 8.59062e-16, 8.48596e-08, 3.48787e-16, 2.463, -1.96018e-16, -1.50996e-07, -8.59062e-16, -0.562, 1.707, 0.45, 10.16)
 
 [node name="ScoreLabel" type="Control" parent="."]
 layout_mode = 3

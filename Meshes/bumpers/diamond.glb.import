@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://74y8fy55rg1x"
-path="res://.godot/imported/diamond.glb-d419113b179196d46f66c46d462cae76.scn"
+path="res://.godot/imported/diamond.glb-a7ca5d66c6646bbae411a6fec7b9baf6.scn"
 
 [deps]
 
-source_file="res://Meshes/bumpers/diamond/diamond.glb"
-dest_files=["res://.godot/imported/diamond.glb-d419113b179196d46f66c46d462cae76.scn"]
+source_file="res://Meshes/bumpers/diamond.glb"
+dest_files=["res://.godot/imported/diamond.glb-a7ca5d66c6646bbae411a6fec7b9baf6.scn"]
 
 [params]
 
