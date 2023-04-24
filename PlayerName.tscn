@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3x8c27sly46r"]
 
-[ext_resource type="Script" path="res://PlayerName.gd" id="1_ge2h0"]
+[ext_resource type="Script" path="res://Scripts/PlayerName.gd" id="1_f8nlq"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -11,7 +11,7 @@ offset_left = 281.0
 offset_top = 228.0
 offset_right = 890.0
 offset_bottom = 376.0
-script = ExtResource("1_ge2h0")
+script = ExtResource("1_f8nlq")
 
 [node name="EnterYourName" type="Label" parent="Control"]
 layout_mode = 0
