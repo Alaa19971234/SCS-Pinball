@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqfm20gibqayd"]
+[gd_scene load_steps=5 format=3 uid="uid://bqfm20gibqayd"]
 
 [ext_resource type="Script" path="res://Scripts/Plunger.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dpagyl5vs2xdy" path="res://sounds/plunger push.wav" id="2_4l2em"]
 
 [sub_resource type="CylinderMesh" id="1"]
 
@@ -14,5 +15,8 @@ mesh = SubResource("1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("2")
+
+[node name="plunger push" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_4l2em")
 
 [connection signal="tree_entered" from="." to="." method="on_bumper_hit"]

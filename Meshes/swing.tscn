@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy3fu7p8t0ppm"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3fu7p8t0ppm"]
+
+[ext_resource type="Script" path="res://Scripts/GateOpenSound.gd" id="1_pryuh"]
+[ext_resource type="AudioStream" uid="uid://bweltv6usw8vq" path="res://sounds/Gate smash 2.wav" id="2_af3na"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_41xel"]
 
@@ -6,10 +9,12 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_56vlu"]
 
-[node name="swing" type="Node3D"]
+[node name="swing" type="Node3D" groups=["bumper"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0463905, 0.0665064, -0.065218)
+script = ExtResource("1_pryuh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 2
+collision_layer = 15
 collision_mask = 2
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="StaticBody3D"]
@@ -23,10 +28,11 @@ angular_limit/upper = 0.174533
 transform = Transform3D(0.28423, 0, 0, 0, 0.648665, 0, 0, 0, 0.233559, 0, 0.504297, 0)
 mesh = SubResource("CylinderMesh_41xel")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["bumper"]]
 transform = Transform3D(1.06041, 0, 0, 0, 1.00121, 0, 0, 0, 1.00121, 0, 0, 0)
-collision_layer = 2
+collision_layer = 15
 collision_mask = 2
+script = ExtResource("1_pryuh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(2, 0, 0, 0, 1.014, 0, 0, 0, 0.179, -0.951972, 0.5, 0)
@@ -35,3 +41,7 @@ mesh = SubResource("BoxMesh_x4ieq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.177, -0.952, 0.5, 0)
 shape = SubResource("BoxShape3D_56vlu")
+
+[node name="GateOpen" type="AudioStreamPlayer3D" parent="RigidBody3D"]
+transform = Transform3D(0.943031, 0, 0, 0, 0.998792, 0, 0, 0, 0.998792, 0, 0, 0)
+stream = ExtResource("2_af3na")

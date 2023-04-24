@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://f74alatdabbw"]
+[gd_scene load_steps=13 format=3 uid="uid://f74alatdabbw"]
 
 [ext_resource type="Script" path="res://Scripts/Bumper.gd" id="1_7deig"]
 [ext_resource type="AudioStream" uid="uid://qnmbfe73o7cg" path="res://sounds/coin.wav" id="2_ftv63"]
+[ext_resource type="AudioStream" uid="uid://cppyupg70wnor" path="res://sounds/Level up.wav" id="3_1tak2"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_fahfe"]
 
@@ -84,3 +85,11 @@ shape = SubResource("BoxShape3D_70u1x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1687, -0.24707, -1.83406)
 stream = ExtResource("2_ftv63")
 autoplay = true
+
+[node name="LevelupMusic" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_1tak2")
+volume_db = -21.333
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+visible = false
+light_color = Color(0.145098, 0.372549, 0, 1)
