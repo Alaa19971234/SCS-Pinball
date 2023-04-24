@@ -1,1 +1,11 @@
+Button
+LineEdit
+Label
+Control
+CanvasLayer
+TextureRect
+OmniLight3D
+AudioStreamPlayer3D
+StaticBody3D
+Camera3D
 CollisionShape3D

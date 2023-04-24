@@ -1,2 +1,5 @@
 res://default_env.tres
-res://Level 1.tscn
+res://Meshes/PinballMap.tscn
+res://PlayerName.tscn
+res://leaderboard.tscn
+res://Meshes/swing.tscn

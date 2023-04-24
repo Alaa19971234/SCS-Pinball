@@ -1,34 +1,73 @@
 2a60927148abd1d33b818b535e306557
-::res://::1678675074
-default_env.tres::Environment::5575960045946294580::1678675043::0::1::::<><>::
-GlobalScore.tscn::PackedScene::-1::1678669193::0::1::::<><>::res://Scripts/GlobalScore.gd
-icon.png::CompressedTexture2D::840153554514023106::1677634554::1678669201::1::::<><>::
-Level 1.tscn::PackedScene::172332924901035644::1678675043::0::1::::<><>::uid://d143du2o8boe2<>uid://ccjo68axpp0la<>uid://bqfm20gibqayd<>uid://ccbkr2iqno4f2<>uid://e205qa7sk7xh<>res://Meshes/ball.tscn<>res://Scripts/FlipperStaticBody.gd<>res://ScoreLabel.gd
-ScoreLabel.gd::GDScript::-1::1678669193::0::1::::<>Control<>::
-::res://Meshes/::1678675043
-ball.tscn::PackedScene::-1::1678669193::0::1::::<><>::res://Scripts/ball.gd<>res://Meshes/ball_physicsmaterial.tres
-ball_physicsmaterial.tres::PhysicsMaterial::5468241575107566720::1678675042::0::1::::<><>::
-Pinball map.glb::PackedScene::6903033310797643910::1678639159::1678669201::1::::<><>::
-Pinball map.tscn::PackedScene::4915922392074186873::1678675043::0::1::::<><>::
-Plunger.tscn::PackedScene::3520542213738577347::1678675043::0::1::::<><>::res://Scripts/Plunger.gd
-::res://Meshes/bumpers/::1678675043
-bumper.tscn::PackedScene::338065914400072709::1678675043::0::1::::<><>::res://Scripts/Bumper.gd<>res://Meshes/bumpers/Lower_Sides_Map.material<>res://Meshes/bumpers/Top_Sides_Map.material<>res://Meshes/bumpers/Top_Map.material
-license.txt::TextFile::-1::1677634554::0::1::::<><>::
-Lower_Sides_Map.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
-Top_Map.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
-Top_Sides_Map.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
-::res://Meshes/Flipper/::1678675043
-FlipperOne.tscn::PackedScene::9045745466572027123::1678675043::0::1::::<><>::res://Scripts/Flipper1.gd<>res://Meshes/Flipper/Root.material
-FlipperTwo.tscn::PackedScene::4932705586294820514::1678670467::0::1::::<><>::res://Scripts/Flipper 2.gd<>res://Meshes/Flipper/Root.material
-Flipper_physicsmaterial.tres::PhysicsMaterial::-1::1678669194::0::1::::<><>::
-license.txt::TextFile::-1::1677634554::0::1::::<><>::
-Root.material::StandardMaterial3D::-1::1677634554::0::1::::<><>::
-::res://Scripts/::1678675042
-ball.gd::GDScript::-1::1678674408::0::1::::<>RigidBody3D<>::
-Bumper.gd::GDScript::-1::1678675042::0::1::::<>CharacterBody3D<>::
-Flipper1.gd::GDScript::-1::1678673049::0::1::::<>CharacterBody3D<>::
-Flipper 2.gd::GDScript::-1::1678673049::0::1::::<>CharacterBody3D<>::
-FlipperStaticBody2.gd::GDScript::-1::1678669193::0::1::::<>StaticBody3D<>::
-FlipperStaticBody.gd::GDScript::-1::1678669193::0::1::::<>StaticBody3D<>::
-GlobalScore.gd::GDScript::-1::1678669193::0::1::::<>Node<>::
-Plunger.gd::GDScript::-1::1678674632::0::1::::<>CharacterBody3D<>::
+::res://::1682308121
+default_env.tres::Environment::5575960045946294580::1682307799::0::1::::<><>::
+GlobalScore.tscn::PackedScene::8529332810282497732::1682294285::0::1::::<><>::res://Scripts/GlobalScore.gd
+icon.png::CompressedTexture2D::840153554514023106::1681931268::1681931268::1::::<><>::
+leaderboard.tscn::PackedScene::780266698104743729::1682307799::0::1::::<><>::res://Scripts/leaderboard.gd
+MainScreen.tscn::PackedScene::7486400423859542668::1682304587::0::1::::<><>::res://Scripts/MainScreenCamera.gd<>res://Scripts/MainScreen.gd<>uid://ccbkr2iqno4f2<>res://Scripts/CLICK ANYWHERE.gd<>uid://b185732ske5p3
+PlayerName.tscn::PackedScene::2608615568239597597::1682307799::0::1::::<><>::res://Scripts/PlayerName.gd
+selection_options.tscn::PackedScene::818611990239369998::1682304587::0::1::::<><>::
+::res://Meshes/::1682307799
+ball.tscn::PackedScene::155218446567616129::1682272718::0::1::::<><>::res://Scripts/ball.gd<>uid://cj54e0vtcvnkq<>uid://sbl23xlju1h1
+ball_physicsmaterial.tres::PhysicsMaterial::5468241575107566720::1681931268::0::1::::<><>::
+bumper.tscn::PackedScene::418765677734437068::1682295166::0::1::::<><>::res://Scripts/Bumper.gd<>uid://qnmbfe73o7cg<>uid://cppyupg70wnor
+Pinball map.glb::PackedScene::6903033310797643910::1681931268::1681931268::1::::<><>::
+Pinball map.tscn::PackedScene::4915922392074186873::1682295166::0::1::::<><>::uid://byr6m7sq1qxnf
+PinballMap.tscn::PackedScene::3323788683932536075::1682307799::0::1::::<><>::uid://dy3fu7p8t0ppm<>res://Scripts/Lights.gd<>res://Meshes/south_easbumper.tscn<>uid://bqfm20gibqayd<>uid://chgoppuid1b6<>res://Scripts/ScoreLabel.gd<>uid://ccjo68axpp0la<>uid://c4xeghl34ms0y<>uid://byr6m7sq1qxnf<>uid://d143du2o8boe2<>res://Scripts/WallSound.gd<>uid://cv68idr77q0oj<>uid://f74alatdabbw<>uid://b185732ske5p3
+Plunger.tscn::PackedScene::3520542213738577347::1682237773::0::1::::<><>::res://Scripts/Plunger.gd<>uid://dpagyl5vs2xdy
+south_easbumper.tscn::PackedScene::-1::1682294528::0::1::::<><>::res://Scripts/SouthBumper.gd<>uid://crq6sclg7fd3v
+south_westbumper.tscn::PackedScene::7025565000843953602::1681931268::0::1::::<><>::
+swing.tscn::PackedScene::8901937881792715038::1682307799::0::1::::<><>::uid://bweltv6usw8vq
+::res://Meshes/bumpers/::1682009133
+bumper.tscn::PackedScene::338065914400072709::1681931268::0::1::::<><>::res://Scripts/Bumper.gd<>res://Meshes/bumpers/Lower_Sides_Map.material<>res://Meshes/bumpers/Top_Sides_Map.material<>res://Meshes/bumpers/Top_Map.material
+diamond.glb::PackedScene::2307426391405912011::1681931268::1682009133::1::::<><>::
+license.txt::TextFile::-1::1681931268::0::1::::<><>::
+Lower_Sides_Map.material::StandardMaterial3D::-1::1681931268::0::1::::<><>::
+southEasbumper.glb::PackedScene::8873299676687916935::1681931268::1682009133::1::::<><>::
+Top_Map.material::StandardMaterial3D::-1::1681931268::0::1::::<><>::
+Top_Sides_Map.material::StandardMaterial3D::-1::1681931268::0::1::::<><>::
+::res://Meshes/Flipper/::1682237392
+FlipperOne.tscn::PackedScene::9045745466572027123::1682237392::0::1::::<><>::res://Scripts/Flipper1.gd<>res://Meshes/Flipper/Root.material<>uid://7pnwilphsxpf
+FlipperTwo.tscn::PackedScene::4932705586294820514::1681931268::0::1::::<><>::res://Scripts/Flipper 2.gd<>res://Meshes/Flipper/Root.material
+Flipper_physicsmaterial.tres::PhysicsMaterial::-1::1681931268::0::1::::<><>::
+license.txt::TextFile::-1::1681931268::0::1::::<><>::
+Root.material::StandardMaterial3D::-1::1681931268::0::1::::<><>::
+::res://Scripts/::1682307798
+ball.gd::GDScript::-1::1682300219::0::1::::<>RigidBody3D<>::
+Bumper.gd::GDScript::-1::1682292637::0::1::::<>CharacterBody3D<>::
+CLICK ANYWHERE.gd::GDScript::-1::1682269389::0::1::::<>Label<>::
+Flipper1.gd::GDScript::-1::1682235274::0::1::::<>CharacterBody3D<>::
+Flipper 2.gd::GDScript::-1::1681931268::0::1::::<>CharacterBody3D<>::
+FlipperStaticBody2.gd::GDScript::-1::1681931268::0::1::::<>StaticBody3D<>::
+FlipperStaticBody.gd::GDScript::-1::1681931268::0::1::::<>StaticBody3D<>::
+GateOpenSound.gd::GDScript::-1::1682267705::0::1::::<>Node3D<>::
+GlobalScore.gd::GDScript::-1::1682293183::0::1::::<>Node<>::
+Label.gd::GDScript::-1::1681931268::0::1::::<>Label<>::
+leaderboard.gd::GDScript::-1::1682306376::0::1::::<>CanvasLayer<>::
+Lights.gd::GDScript::-1::1682294112::0::1::::<>StaticBody3D<>::
+MAIN MENU.gd::GDScript::-1::1682226351::0::1::::<>Control<>::
+MainScreen.gd::GDScript::-1::1682296802::0::1::::<>Node3D<>::
+MainScreenCamera.gd::GDScript::-1::1682010588::0::1::::<>Camera3D<>::
+Pinball map.gd::GDScript::-1::1681931268::0::1::::<>StaticBody3D<>::
+PlayerName.gd::GDScript::-1::1682305799::0::1::::<>Control<>::
+Plunger.gd::GDScript::-1::1682294972::0::1::::<>CharacterBody3D<>::
+ScoreLabel.gd::GDScript::-1::1682285881::0::1::::<>Control<>::
+sounds.gd::GDScript::-1::1681931268::0::1::::<>Node3D<>::
+SouthBumper.gd::GDScript::-1::1682267667::0::1::::<>CharacterBody3D<>::
+SouthLight.gd::GDScript::-1::1681931268::0::1::::<>DirectionalLight3D<>::
+WallSound.gd::GDScript::-1::1682292566::0::1::::<>StaticBody3D<>::
+::res://sounds/::1682289054
+ball rolling.wav::AudioStreamWAV::1266181173291444672::1681931268::1682009132::1::::<><>::
+coin.wav::AudioStreamWAV::1150589069006304378::1681931268::1682009132::1::::<><>::
+flipper.wav::AudioStreamWAV::2277837708971074687::1682234697::1682234867::1::::<><>::
+Gate smash 2.wav::AudioStreamWAV::3939535723563632750::1682234697::1682234867::1::::<><>::
+Level up.wav::AudioStreamWAV::5858133410579378401::1682289044::1682289054::1::::<><>::
+plunger push.wav::AudioStreamWAV::8212502491740375154::1682234853::1682234867::1::::<><>::
+plunger.wav::AudioStreamWAV::8941584020016842784::1682234697::1682234867::1::::<><>::
+south bumper.wav::AudioStreamWAV::6000996246718882689::1682234697::1682234580::1::::<><>::
+VideoGameMenuSoundsMenu-Selection-Change-N-www.fesliyanstudios.com.wav::AudioStreamWAV::4281335252548782930::1682266692::1682266699::1::::<><>::
+wall collision.wav::AudioStreamWAV::6312820926602347785::1682234697::1682234867::1::::<><>::
+::res://Textures/::1682293573
+download.jpg::CompressedTexture2D::3240314317309077137::1682284081::1682284109::1::::<><>::
+liveIcon.png::CompressedTexture2D::6856052489934749858::1682293571::1682293573::1::::<><>::
+PINBANK.bmp::CompressedTexture2D::4107952718443565115::1682196902::1682196964::1::::<><>::
