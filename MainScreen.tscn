@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://dewp6k6aklkqm"]
+
+[ext_resource type="Script" path="res://Scripts/MainScreenCamera.gd" id="1_fwjm3"]
+[ext_resource type="Script" path="res://Scripts/MainScreen.gd" id="1_to3ab"]
+[ext_resource type="PackedScene" uid="uid://ccbkr2iqno4f2" path="res://Meshes/Pinball map.tscn" id="2_pmo0s"]
+[ext_resource type="Script" path="res://Scripts/CLICK ANYWHERE.gd" id="4_vo2s6"]
+[ext_resource type="AudioStream" uid="uid://b185732ske5p3" path="res://sounds/VideoGameMenuSoundsMenu-Selection-Change-N-www.fesliyanstudios.com.wav" id="5_2mb3j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa22n"]
+font_size = 120
+font_color = Color(0.498039, 0.498039, 0.498039, 1)
+outline_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_0erts"]
+font_size = 120
+font_color = Color(0, 1, 0, 1)
+outline_size = 20
+
+[node name="MainScreen" type="Node3D"]
+script = ExtResource("1_to3ab")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, 9.6364, 4.93973, 18.9346)
+script = ExtResource("1_fwjm3")
+
+[node name="Pinball map" parent="." instance=ExtResource("2_pmo0s")]
+transform = Transform3D(1, 0, 0, 0, 0.906588, -0.422017, 0, 0.422017, 0.906588, 1.1007, 4.77535, 5.22546)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="first_light1" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(0.756596, 0.54003, -0.368688, -0.0853489, -0.477459, -0.874499, -0.648289, 0.693109, -0.315153, 0, 9.08651, -26.6243)
+light_color = Color(1, 0, 0, 1)
+
+[node name="first_light2" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.507899, -0.861417, 0, 0.861417, 0.507899, 0, 9.08651, 16.5689)
+light_color = Color(0.678431, 0.533333, 0, 1)
+
+[node name="second_light1" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(0.756596, 0.54003, -0.368687, -0.0853489, -0.477459, -0.874499, -0.648289, 0.693109, -0.315152, 0, 9.08651, -26.6243)
+light_color = Color(1, 1, 0, 1)
+
+[node name="second_light2" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.507899, -0.861417, 0, 0.861417, 0.507899, 0, 9.08651, 16.5689)
+light_color = Color(1, 0.741176, 0, 1)
+
+[node name="third_light1" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(0.756596, 0.54003, -0.368687, -0.0853489, -0.477459, -0.874499, -0.648289, 0.693109, -0.315152, 0, 9.08651, -26.6243)
+light_color = Color(0, 0, 1, 1)
+
+[node name="third_light2" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.507899, -0.861417, 0, 0.861417, 0.507899, 0, 9.08651, 16.5689)
+light_color = Color(0, 1, 1, 1)
+
+[node name="MAIN MENU" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start_label" type="Label" parent="MAIN MENU"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 508.0
+offset_right = 645.0
+offset_bottom = 534.0
+scale = Vector2(1.798, 1.798)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "CLICK ANYTHING TO START"
+script = ExtResource("4_vo2s6")
+
+[node name="PIN" type="Label" parent="MAIN MENU"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 42.0
+offset_right = 510.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.262745, 0.262745, 0.262745, 1)
+text = "PIN"
+label_settings = SubResource("LabelSettings_oa22n")
+
+[node name="BANK" type="Label" parent="MAIN MENU"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 43.0
+offset_right = 747.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "BANK"
+label_settings = SubResource("LabelSettings_0erts")
+
+[node name="OptionSelectionSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_2mb3j")

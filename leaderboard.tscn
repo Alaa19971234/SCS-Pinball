@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://ld744tldffiv"]
+
+[ext_resource type="Script" path="res://Scripts/leaderboard.gd" id="1_gbwcp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbcsc"]
+font_size = 44
+font_color = Color(1, 1, 0, 1)
+outline_size = 10
+
+[node name="leaderboard" type="CanvasLayer"]
+script = ExtResource("1_gbwcp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 457.0
+offset_top = 17.0
+offset_right = 557.0
+offset_bottom = 43.0
+text = "Leaderboard"
+label_settings = SubResource("LabelSettings_xbcsc")
+
+[node name="Place" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 240.0
+offset_bottom = 173.0
+text = "hi"
+
+[node name="Place2" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 180.0
+offset_right = 240.0
+offset_bottom = 203.0
+
+[node name="Place3" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 210.0
+offset_right = 240.0
+offset_bottom = 233.0
+
+[node name="Place4" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 240.0
+offset_right = 240.0
+offset_bottom = 263.0
+
+[node name="Place5" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 270.0
+offset_right = 240.0
+offset_bottom = 293.0
+
+[node name="Place6" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 240.0
+offset_bottom = 323.0
+
+[node name="Place7" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 330.0
+offset_right = 240.0
+offset_bottom = 353.0
+
+[node name="Place8" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 360.0
+offset_right = 240.0
+offset_bottom = 383.0
+
+[node name="Place9" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 380.0
+offset_right = 240.0
+offset_bottom = 403.0
+
+[node name="Place10" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 400.0
+offset_right = 240.0
+offset_bottom = 423.0

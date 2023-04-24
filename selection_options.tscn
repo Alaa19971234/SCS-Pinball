@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://lwsojm52hjfy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="new_game_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 338.0
+offset_right = 634.0
+offset_bottom = 369.0
+scale = Vector2(1.798, 1.798)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "NEW GAME"
+
+[node name="leaderboard_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 427.0
+offset_right = 639.0
+offset_bottom = 458.0
+scale = Vector2(1.798, 1.798)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "LEADERBOARD"

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3x8c27sly46r"]
+
+[ext_resource type="Script" path="res://PlayerName.gd" id="1_ge2h0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 281.0
+offset_top = 228.0
+offset_right = 890.0
+offset_bottom = 376.0
+script = ExtResource("1_ge2h0")
+
+[node name="EnterYourName" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 33.0
+offset_right = 350.0
+offset_bottom = 59.0
+scale = Vector2(1.332, 1.332)
+text = "Enter your name"
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 101.0
+offset_right = 344.063
+offset_bottom = 132.0
+placeholder_text = "Name"
+
+[node name="SubmitButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 165.0
+offset_right = 344.0
+offset_bottom = 196.0
+text = "Submit"
+
+[connection signal="pressed" from="Control/SubmitButton" to="Control" method="_on_submit_button_pressed"]
