@@ -1,19 +1,17 @@
 extends CharacterBody3D
 
-@export var plunger_speed = 50
+@export var plunger_speed = 10
 @export var max_plunger_distance = 0
 @export var min_plunger_scale = 6
-@export var plunger_force = 100
+@export var plunger_force = 50
+var push: AudioStreamPlayer3D
 var plunger_distance = 0
 var plunger_scale = Vector3(1, 4, 1)
 #var gate
 #var gate_collision
 
 func _ready():
-	#gate = get_node_or_null("/root/Level/Gate")
-	#gate_collision = gate.get_node_or_null("GateCollision")
-	#gate_collision.disabled = true
-	pass
+	push = get_node("plunger push") as AudioStreamPlayer3D
 
 
 func _input(event):
@@ -34,6 +32,7 @@ func _physics_process(delta):
 
 
 func on_bumper_hit(body):
+	push.play()
 	# Add any behavior or events you want to trigger here
 	if body.is_in_group("ball"):
 		print("plunger!");

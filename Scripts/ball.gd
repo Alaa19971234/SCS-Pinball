@@ -1,10 +1,8 @@
 extends RigidBody3D
-
-var plunger
+var live1
+var live2
 var return_box
 var starting_base
-var board
-var Breakwall
 var FloorBreak
 var BreakRestorePoint
 var SouthWallBreak2
@@ -19,18 +17,15 @@ var ball: AudioStreamPlayer3D
 
 
 func _ready():
-		# Find the AudioStreamPlayer3D node by name
 	ball = get_node("ballSound") as AudioStreamPlayer3D
+	live1 = get_node("/root/PinballMap/ScoreLabel/liveIcon")
+	live2 = get_node("/root/PinballMap/ScoreLabel/liveIcon2")
+	live1.visible = true
+	live2.visible = true
 
-	# Load the sound file and set it as the stream for the AudioStreamPlayer3D node
-	ball.stream = load("res://sounds/ball rolling.wav")
-	# Play the sound
-	# Find certain nodes
-	#board = get_node_or_null("/root/Level/PinballMap")
-	#plunger = get_node_or_null("/root/Level/Plunger")
 	starting_base = get_node_or_null("/root/PinballMap/collisions&meshes/StartingBase")
 	return_box = get_node_or_null("/root/PinballMap/collisions&meshes/ReturnBox")
-	#Breakwall = get_node_or_null("/root/Level/Breakwalls")
+
 	FloorBreak = get_node_or_null("/root/PinballMap/collisions&meshes/FloorBreak")
 	EastWallBreak = get_node_or_null("/root/PinballMap/collisions&meshes/EastWallBreak")
 	EastWallBreak2 = get_node_or_null("/root/PinballMap/collisions&meshes/EastWallBreak2")
@@ -52,7 +47,7 @@ func _on_ball_body_entered(body):
 	
 	# Check if the ball has broken the walls and collided with the exterior
 	if body in [FloorBreak, EastWallBreak, EastWallBreak2, WestWallBreak, WestWallBreak2, NorthWallBreak, NorthWallBreak2, SouthWallBreak, SouthWallBreak2]:
-		print("wall break")
+		#print("wall break")
 		GlobalScore.score += 100
 		BreakRestorePoint = get_node_or_null("/root/PinballMap/collisions&meshes/BreakRestorePoint")
 		if BreakRestorePoint:
@@ -76,7 +71,16 @@ func _on_ball_body_entered(body):
 
 	# Check if the ball has collided with the return box
 	if body == return_box:
-		print("lose")
+		if live1.visible == false:
+			live2.visible = false
+		live1.visible = false
+		GlobalScore.lives -= 1
+		GlobalScore.bank_Level = 0
+		#Bank_level = 0
+		if GlobalScore.lives == 0:
+			print("Game Over")
+			get_tree().change_scene_to_file("res://MainScreen.tscn")  #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< name first, compare scores later
+			get_tree().change_scene_to_file("res://PlayerName.tscn")
 		starting_base = get_node_or_null("/root/PinballMap/collisions&meshes/StartingBase")
 		if starting_base:
 			# Set the ball's position to the position of the starting base next to the plunger
